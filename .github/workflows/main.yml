@@ -5,4 +5,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      run: ls ${{github.workspace}}
+      run: ls ${{github.workspace}
+        shell:bash
