@@ -4,4 +4,5 @@ jobs:
   prepareEle:   # first job
     runs-on: ubuntu-latest
     steps:
-        run: "echo 'find elephant in the zoo'"
+    - name: Checkout
+      run: "echo 'find elephant in the zoo'"
