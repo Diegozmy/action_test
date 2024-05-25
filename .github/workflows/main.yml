@@ -3,14 +3,18 @@ name: Check Files
 on: [push, pull_request]
 
 jobs:
-  check-files:
+  run-script:
     runs-on: ubuntu-latest
+
     steps:
-    - name: Check out code
-      uses: actions/checkout@v2
 
-    - name: List workspace contents
-      run: ls -R $GITHUB_WORKSPACE
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
 
-    - name: Show file content
-      run: cat ${GITHUB_WORKSPACE}/a.txt 
+    - name: Install requests library
+      run: pip install requests
+
+    - name: Run Python script
+      run: python ${GITHUB_WORKSPACE}/check.py
