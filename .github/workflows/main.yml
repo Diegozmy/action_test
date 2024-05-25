@@ -1,8 +1,16 @@
-name: 'put elephone in to fridge'
+name: Check Files
+
 on: [push, pull_request]
+
 jobs:
-  prepareEle:   # first job
+  check-files:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      run: cat ${GITHUB_WORKSPACE}/a.txt
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: List workspace contents
+      run: ls -R $GITHUB_WORKSPACE
+
+    - name: Show file content
+      run: cat ${GITHUB_WORKSPACE}/path/to/your/a.txt 
