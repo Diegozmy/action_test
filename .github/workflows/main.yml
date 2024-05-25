@@ -13,4 +13,4 @@ jobs:
       run: ls -R $GITHUB_WORKSPACE
 
     - name: Show file content
-      run: cat ${GITHUB_WORKSPACE}/path/to/your/a.txt 
+      run: cat ${GITHUB_WORKSPACE}/a.txt 
