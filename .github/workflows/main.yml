@@ -5,4 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      run: echo "${{github.workspace}}/alist server"
+      run: cat ${GITHUB_WORKSPACE}/a.txt
