@@ -1,13 +1,17 @@
 import requests
-from time import time
-#from PIL import Image
-import base64
-"""
-def base64_to_image(base64_string, output_path):
-    with open(output_path, 'wb') as image_file:
-        decoded_string = base64.b64decode(base64_string)
-        image_file.write(decoded_string)
-"""
+from time import time,sleep
+from random import randint
+
+# 生成一个5到10之间的随机延迟时间（秒）
+delay = randint(0, 1200)
+
+# 输出延迟时间
+print("延迟时间为 {} 秒".format(delay))
+
+# 进行延迟
+sleep(delay)
+print("延迟结束，继续执行下面的代码")
+
 def img_to_answer(img):
     data = {
         "request_url": "http://api.tanshuapi.com/api/ocr_general/v1/index",
