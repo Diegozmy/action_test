@@ -40,7 +40,7 @@ else:
     raise TimeoutError("failed to get the img")
 
 answer=img_to_answer(img)
-print(img)
+#print(img)
 #base64_to_image(img,"a.jpg")
 t = int(time())
 url2=f"https://wemc.cc/v1/user/sign/?code={answer}&_t={t}"
