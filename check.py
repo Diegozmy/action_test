@@ -28,7 +28,7 @@ def img_to_answer(img):
     return answer
 
 cookies = {
-    "connect.sid": "s:unckDoxBt59VzgS4WVD5CEoqTkvnjhzo.HlkdVxliXt2KTWW3KiSS2KB4ApIudMW7U2zs/uPWJWo"
+    "connect.sid": "s:pbVb3klDfnqgjx0i2dUZgLyOEcq4MPsE.15d2RzJP7gAT8xzN7VsqW3Olay2n0RjHdCgVtoO3nu8"
 }
 t = int(time())
 re = requests.get(f"https://wemc.cc/v1/user/sign/code/?_t={t}", cookies=cookies)
