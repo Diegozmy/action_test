@@ -47,3 +47,10 @@ url2=f"https://wemc.cc/v1/user/sign/?code={answer}&_t={t}"
 print(url2)
 re=requests.get(url2,cookies=cookies)
 print(re.text)
+
+
+url="https://api.v2.rainyun.com/user/reward/tasks"
+headers = {"x-api-key":"b71UnUTO59EXJupt3YZgawpZkOw0D33P"}
+data={"task_name":"每日签到"}
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
