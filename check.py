@@ -27,9 +27,15 @@ def img_to_answer(img):
     print(answer)
     return answer
 
-cookies = {
-    "connect.sid": "s:dp5UjBQb_Eton-Amyw0wkPvY9K0Mkly-.ruYeUOleS1sXUbJyc4VkHZfK2e7ZmaRLrtIfocMfqao"
-}
+def get_cookies():
+    t = int(time())
+    data = {"email": "2325857342@qq.com",
+            "password": "zmy20090622"}
+    re = requests.post(f"https://wemc.cc/v1/auth/login/?_t={t}", json=data)
+    print(re.text)
+    return re.cookies
+
+cookies = get_cookies()
 t = int(time())
 re = requests.get(f"https://wemc.cc/v1/user/sign/code/?_t={t}", cookies=cookies)
 if re.json()['code'] == 200:
