@@ -27,5 +27,11 @@ jobs:
     - name: Install requests library
       run: pip install requests
 
-    - name: Run Python script
+    - name: check
       run: python ${GITHUB_WORKSPACE}/check.py
+      
+    - name: Install mysql-connector-python library
+      run: pip install mysql-connector-python
+      
+    - name: refersh2
+      run: python ${GITHUB_WORKSPACE}/refersh2.py
