@@ -12,7 +12,6 @@ cursor = cnx.cursor()
 
 cursor.execute("SELECT * FROM urls")
 urls=[row[1] for row in cursor.fetchall()]
-urls.reverse()
 for url in urls:
     print(url)
     try:
@@ -24,7 +23,7 @@ for url in urls:
         new = re.text.split('<script type="text/javascript">document.write(secdotxts+".")</script>')[-1].split("</h1>")[
             0]
         print(new)
-        if new != url:
+        if new not in urls:
             sql = "INSERT INTO urls (url) VALUES (%s)"
             val = (new,)
             cursor.execute(sql, val)
@@ -36,6 +35,7 @@ for url in urls:
         sql = f"DELETE FROM urls WHERE url = '{url}';"
         cursor.execute(sql)
         cnx.commit()
+        continue
 
 
 cursor.close()
