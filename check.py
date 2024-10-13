@@ -54,6 +54,9 @@ print(url2)
 re=requests.get(url2,cookies=cookies)
 print(re.text)
 
+data={"day":1}
+re = requests.post(f"https://wemc.cc/v1/ists/renew/?_t={t}", cookies=cookies,json=data)
+print(re.json())
 
 url="https://api.v2.rainyun.com/user/reward/tasks"
 headers = {"x-api-key":"b71UnUTO59EXJupt3YZgawpZkOw0D33P"}
